@@ -1,0 +1,38 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-25T11:44:03.472Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 1,
+    "implemented": 1,
+    "items": [
+      {
+        "id": "REQ-11",
+        "summary": "Adjust the FloatingHearts component so that hearts are clearly noticeable across the entire page/viewport at all times when the pink theme is active. Increase the base opacity of hearts so they are visibly prominent against the pink background (without being overwhelming). Ensure hearts are distributed and cover the full width and height of the viewport, not clustered in one area. The count should remain in a reasonable range (30–45) — just enough to be clearly visible and spread throughout the screen.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/FloatingHearts.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/FloatingHearts.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "build-template/README.md",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/components/FloatingHearts.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

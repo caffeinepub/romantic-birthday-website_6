@@ -1,0 +1,25 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Make floating hearts more visible across the full page",
+  "requirements": [
+    {
+      "id": "REQ-11",
+      "summary": "Adjust FloatingHearts component to be clearly noticeable across the entire viewport when pink theme is active",
+      "acceptanceCriteria": [
+        "Floating hearts are visibly noticeable against the pink background — not faint or nearly invisible.",
+        "Hearts appear distributed across the full viewport width and height, not concentrated in one region.",
+        "The number of hearts is moderate (30–45) — noticeably present but not overwhelming or cluttered.",
+        "Heart opacity values are high enough to be clearly seen on the pink background.",
+        "No other theme elements, animations, or layout are changed."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/FloatingHearts.tsx",
+          "operation": "modify",
+          "description": "Increase the base opacity of hearts to ensure they are visibly prominent against the pink background. Adjust the heart count to a moderate range (30–45) if currently at 45, keep it; otherwise adjust to this range. Enhance the randomization logic for positioning to ensure hearts are distributed across the full viewport width and height, not clustered in one area. Update opacity values in the style generation to be higher (e.g., minimum 0.4–0.5 instead of lower values) so hearts are clearly noticeable. Ensure the generated image frontend/public/assets/generated/heart-float.dim_64x64.png is used as the heart image source. Do not change the visibility prop logic or blackout state behavior."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Premium romantic-themed interactive birthday website with pink background, floating hearts, multi-step interactive flow (opening animation → Yes/No choice → blackout → light reveal → decorate with flowers → balloon launch → final message), and smooth magical transitions throughout.",
+  "architectural_notes": [
+    "Single-page app with sequential state-based UI transitions (no routing needed)",
+    "All animations (hearts, flowers, balloons) implemented in CSS/JS without external libraries"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-apply-a-soft-light-pink-romantic-theme-globally-background-color-ffe4ee-or-equivalent-rose-pink-accent-palette-for-all-text-borders-and-ui-elements-typography-should-feel-elegant-and-premium-cursive-or-serif-for-headings-clean-sans-serif-for-body-all-transitions-between-states-must-use-smooth-fade-scale-animations-300-500ms-to-feel-magical",
+      "title": "Apply a soft light-pink romantic theme globally: background color #FFE4EE (or equivalent), rose/pink accent palette for all text, borders, and UI elements. Typography should feel elegant and premium (cursive or serif for headings, clean sans-serif for body). All transitions between states must use smooth fade/scale animations (300–500ms) to feel magical.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-a-high-intensity-continuous-floating-heart-animation-as-a-background-layer-at-least-30-50-small-hearts-of-varying-sizes-and-opacity-should-drift-upward-or-diagonally-across-the-screen-at-all-times-when-the-pink-theme-is-active-hearts-should-be-staggered-in-timing-so-the-animation-feels-continuous-and-dense-this-layer-must-be-present-in-all-pink-theme-states-and-hidden-during-the-blackout-state",
+      "title": "Render a high-intensity continuous floating heart animation as a background layer. At least 30–50 small hearts of varying sizes and opacity should drift upward (or diagonally) across the screen at all times when the pink theme is active. Hearts should be staggered in timing so the animation feels continuous and dense. This layer must be present in all pink-theme states and hidden during the blackout state.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-on-initial-page-load-display-centered-intro-text-it-s-your-special-day-i-have-made-something-for-you-this-text-should-be-prominently-styled-in-the-romantic-theme-after-3-4-seconds-automatically-transition-fade-out-fade-in-to-a-new-screen-showing-the-text-do-you-want-to-see-what-i-made-with-two-buttons-below-yes-primary-rose-deep-pink-background-with-white-or-cream-contrasting-text-and-no-secondary-white-or-blush-background-with-rose-contrasting-text-both-buttons-must-be-visually-distinct-stylish-rounded-and-theme-matching",
+      "title": "On initial page load, display centered intro text: 'It's your special day. I have made something for you.' This text should be prominently styled in the romantic theme. After 3–4 seconds, automatically transition (fade out / fade in) to a new screen showing the text 'Do you want to see what I made?' with two buttons below: 'Yes' (primary, rose/deep-pink background with white or cream contrasting text) and 'No' (secondary, white or blush background with rose contrasting text). Both buttons must be visually distinct, stylish, rounded, and theme-matching.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-when-the-no-button-is-clicked-show-a-playful-themed-response-e-g-a-heart-breaking-emoji-or-gentle-text-like-aww-please-try-again-and-re-display-the-do-you-want-to-see-what-i-made-prompt-with-the-yes-no-buttons-again-so-the-user-can-reconsider",
+      "title": "When the 'No' button is clicked, show a playful, themed response (e.g., a heart-breaking emoji or gentle text like 'Aww, please try again! 💔') and re-display the 'Do you want to see what I made?' prompt with the Yes/No buttons again so the user can reconsider.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-when-the-yes-button-is-clicked-1-briefly-display-centered-text-have-a-look-at-it-madam-ji-with-a-smooth-fade-in-then-2-immediately-transition-the-entire-screen-to-solid-black-all-hearts-hidden-all-pink-elements-gone-in-the-center-of-the-black-screen-display-a-glowing-styled-turn-on-the-light-button-e-g-yellow-or-gold-background-with-dark-contrasting-text-suggesting-a-light-bulb-aesthetic-that-stands-out-against-the-black-background",
+      "title": "When the 'Yes' button is clicked: (1) Briefly display centered text 'Have a look at it, madam ji!' with a smooth fade-in, then (2) immediately transition the entire screen to solid black (all hearts hidden, all pink elements gone). In the center of the black screen, display a glowing/styled 'Turn On the Light' button (e.g., yellow or gold background with dark contrasting text, suggesting a light bulb aesthetic) that stands out against the black background.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-when-the-turn-on-the-light-button-is-clicked-animate-the-screen-returning-to-the-full-pink-theme-fade-from-black-to-pink-hearts-resume-floating-the-turn-on-the-light-button-disappears-and-is-replaced-by-a-new-centered-button-labeled-decorate-styled-in-the-pink-theme-with-contrasting-text",
+      "title": "When the 'Turn On the Light' button is clicked: animate the screen returning to the full pink theme (fade from black to pink, hearts resume floating). The 'Turn On the Light' button disappears and is replaced by a new centered button labeled 'Decorate' styled in the pink theme with contrasting text.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-when-the-decorate-button-is-clicked-1-start-a-flower-rain-animation-colorful-flower-petals-or-small-flower-icons-falling-from-both-sides-of-the-screen-continuously-2-display-a-large-stylish-and-attractive-happy-birthday-text-below-the-button-area-animated-entrance-e-g-scale-in-or-sparkle-effect-3-replace-the-decorate-button-with-a-new-button-labeled-fly-balloons-themed-and-styled-consistently",
+      "title": "When the 'Decorate' button is clicked: (1) Start a flower rain animation — colorful flower petals or small flower icons falling from both sides of the screen continuously. (2) Display a large, stylish, and attractive 'Happy Birthday' text below the button area (animated entrance, e.g., scale-in or sparkle effect). (3) Replace the 'Decorate' button with a new button labeled 'Fly Balloons', themed and styled consistently.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-when-the-fly-balloons-button-is-clicked-launch-a-balloon-animation-where-multiple-colorful-balloons-drawn-via-css-svg-or-emoji-float-upward-across-the-screen-from-the-bottom-the-button-then-changes-its-label-to-my-message-for-you-keeping-the-same-theme-consistent-styling",
+      "title": "When the 'Fly Balloons' button is clicked: launch a balloon animation where multiple colorful balloons (drawn via CSS/SVG or emoji) float upward across the screen from the bottom. The button then changes its label to 'My Message for You', keeping the same theme-consistent styling.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-when-the-my-message-for-you-button-is-clicked-all-buttons-animations-hearts-flowers-balloons-and-decorative-elements-fade-out-only-the-centered-final-message-you-are-a-good-girl-remains-on-screen-displayed-in-a-large-elegant-romantic-font-with-a-soft-glow-or-decorative-styling-against-the-pink-background",
+      "title": "When the 'My Message for You' button is clicked: all buttons, animations (hearts, flowers, balloons), and decorative elements fade out. Only the centered final message 'You are a good girl.' remains on screen, displayed in a large, elegant, romantic font with a soft glow or decorative styling against the pink background.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-all-buttons-throughout-the-site-must-use-a-background-color-drawn-from-the-romantic-pink-palette-rose-blush-deep-pink-magenta-or-complementary-gold-cream-have-text-in-a-clearly-contrasting-color-e-g-white-on-dark-rose-dark-rose-on-cream-blush-use-rounded-corners-padding-and-a-subtle-hover-effect-scale-or-shadow-for-a-premium-feel-no-button-should-have-text-that-blends-into-its-background",
+      "title": "All buttons throughout the site must: use a background color drawn from the romantic pink palette (rose, blush, deep pink, magenta, or complementary gold/cream), have text in a clearly contrasting color (e.g., white on dark rose, dark rose on cream/blush), use rounded corners, padding, and a subtle hover effect (scale or shadow) for a premium feel. No button should have text that blends into its background.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-adjust-the-floatinghearts-component-so-that-hearts-are-clearly-noticeable-across-the-entire-page-viewport-at-all-times-when-the-pink-theme-is-active-increase-the-base-opacity-of-hearts-so-they-are-visibly-prominent-against-the-pink-background-without-being-overwhelming-ensure-hearts-are-distributed-and-cover-the-full-width-and-height-of-the-viewport-not-clustered-in-one-area-the-count-should-remain-in-a-reasonable-range-30-45-just-enough-to-be-clearly-visible-and-spread-throughout-the-screen",
+      "title": "Adjust the FloatingHearts component so that hearts are clearly noticeable across the entire page/viewport at all times when the pink theme is active. Increase the base opacity of hearts so they are visibly prominent against the pink background (without being overwhelming). Ensure hearts are distributed and cover the full width and height of the viewport, not clustered in one area. The count should remain in a reasonable range (30–45) — just enough to be clearly visible and spread throughout the screen.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Pink background with high-intensity floating heart animations",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Opening screen: timed intro text then Yes/No prompt",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Yes button flow: transition to black screen with Turn On the Light button",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Turn On the Light: restore pink theme and show Decorate button",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Decorate: flower rain animation and Happy Birthday text, then Fly Balloons button",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Fly Balloons: balloons flying upward, then My Message for You button",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Final message: display 'You are a good girl.' with all other elements hidden",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Theme-consistent buttons with contrasting text colors throughout",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Make background floating hearts more visible/noticeable across the full page — not too many, but clearly visible throughout",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Romantic Birthday Website",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

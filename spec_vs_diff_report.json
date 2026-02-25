@@ -1,0 +1,14 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-25T11:44:03.470Z",
+  "summary": "The diff modifies FloatingHearts.tsx to address REQ-11. The implementation increases heart count to 40 (within the 30–45 range), raises opacity to 0.55–0.90 (high enough to be visible), distributes hearts across full viewport using percentage-based top positioning (0–110%), uses negative delays for immediate visibility, and preserves the `visible` prop for blackout state hiding. All changes are confined to FloatingHearts.tsx with no other components modified.",
+  "missing_requirements": [],
+  "hallucinated_features": [],
+  "confidence": 0.95,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/src/components/FloatingHearts.tsx",
+    "project_state.json"
+  ]
+}

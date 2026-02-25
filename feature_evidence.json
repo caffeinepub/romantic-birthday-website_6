@@ -1,0 +1,23 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-adjust-the-floatinghearts-component-so-that-hearts-are-clearly-noticeable-across-the-entire-page-viewport-at-all-times-when-the-pink-theme-is-active-increase-the-base-opacity-of-hearts-so-they-are-visibly-prominent-against-the-pink-background-without-being-overwhelming-ensure-hearts-are-distributed-and-cover-the-full-width-and-height-of-the-viewport-not-clustered-in-one-area-the-count-should-remain-in-a-reasonable-range-30-45-just-enough-to-be-clearly-visible-and-spread-throughout-the-screen",
+      "featureTitle": "Adjust the FloatingHearts component so that hearts are clearly noticeable across the entire page/viewport at all times when the pink theme is active. Increase the base opacity of hearts so they are visibly prominent against the pink background (without being overwhelming). Ensure hearts are distributed and cover the full width and height of the viewport, not clustered in one area. The count should remain in a reasonable range (30–45) — just enough to be clearly visible and spread throughout the screen.",
+      "files": [
+        "frontend/src/components/FloatingHearts.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

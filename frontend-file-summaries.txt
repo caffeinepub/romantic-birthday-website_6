@@ -1,0 +1,9 @@
+{
+  "frontend/src/index.css": "Global styles for the romantic pink theme with OKLCH color tokens, Google Fonts imports (Playfair Display, Dancing Script, Lato), custom button classes (btn-romantic-primary, btn-romantic-secondary, btn-gold, btn-action), and all CSS keyframe animations (float-heart, flower-fall, balloon-rise, glow-pulse, birthday-bounce, sparkle-in, shimmer, text-glow).",
+  "frontend/tailwind.config.js": "Extended Tailwind config with romantic font families (Playfair Display, Dancing Script, Lato), rose/cream/gold/magenta color tokens mapped to OKLCH values, and custom border-radius and box-shadow tokens.",
+  "frontend/src/components/FloatingHearts.tsx": "Renders 40 floating heart images distributed across the full viewport (using `top` percentage instead of fixed bottom) with higher opacity (0.55–0.90), negative animation delays so hearts are immediately visible at all positions, and randomized size, speed, drift, and rotation; hidden during blackout state via the `visible` prop.",
+  "frontend/src/components/FlowerRain.tsx": "Renders 40 flower petal images falling from the top of the screen with randomized positions, sizes, speeds, and rotation; controlled by a `visible` prop for the decorated/balloons states.",
+  "frontend/src/components/BalloonAnimation.tsx": "Renders 25 balloon images rising from the bottom of the screen with randomized positions, sizes, speeds, and drift; controlled by a `visible` prop for the balloons state.",
+  "frontend/src/App.tsx": "Main app component managing the full interactive state machine (intro → question → no-response → yes-transition → blackout → decorate → decorated → balloons → final) with smooth opacity/transform transitions, all animation layers, and the footer with caffeine.ai attribution.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file for React Query hooks; no backend queries are needed for this frontend-only application."
+}

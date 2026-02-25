@@ -1,0 +1,18 @@
+{
+  "backend/main.mo": "Empty Motoko actor serving as a placeholder backend with no implemented methods.",
+  "feature_evidence.json": "Feature evidence report linking the FloatingHearts component adjustment (opacity, distribution, count 30–45) to its source file and test ID REQ-11.",
+  "frontend-file-summaries.txt": "JSON document containing one-sentence summaries of each frontend source file for quick reference during build planning.",
+  "frontend/index.css": "Base Tailwind CSS entry point defining OKLCH-based CSS custom property tokens for light and dark themes including colors, radius, and sidebar variables.",
+  "frontend/index.html": "HTML entry point for the Romantic Birthday Website that mounts the React app into a root div and loads the main TypeScript module.",
+  "frontend/src/App.tsx": "Main React component managing a multi-step state machine (intro through final) with timed auto-transitions, user interaction handlers, and conditional rendering of FloatingHearts, FlowerRain, and BalloonAnimation layers.",
+  "frontend/src/components/BalloonAnimation.tsx": "Renders 25 randomized balloons rising from the bottom of the viewport using a balloon-rise CSS animation; conditionally shown via a visible prop.",
+  "frontend/src/components/FloatingHearts.tsx": "Renders 40 heart images distributed across the full viewport with high opacity (0.55–0.90), negative animation delays for immediate visibility, and randomized size, speed, drift, and rotation; hidden when visible is false.",
+  "frontend/src/components/FlowerRain.tsx": "Renders 40 flower petals falling from the top of the screen with randomized horizontal positions, sizes, speeds, and rotations; conditionally shown via a visible prop.",
+  "frontend/src/hooks/useActor.ts": "Custom hook that creates and caches an ICP backend actor via React Query, recreating it when the Internet Identity changes and invalidating dependent queries accordingly.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides an InternetIdentityProvider and useInternetIdentity hook for managing DFINITY AuthClient login, logout, and identity state with status tracking.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder module indicating no backend React Query hooks are needed for this frontend-only application.",
+  "frontend/src/index.css": "Global CSS file that imports Google Fonts, sets up Tailwind directives, defines CSS custom properties for a romantic rose/cream/gold color palette using OKLCH, and declares reusable component classes for buttons and animations.",
+  "frontend/src/main.tsx": "React app entry point that mounts the root component wrapped in QueryClientProvider and InternetIdentityProvider.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration extending the theme with custom romantic fonts (Playfair, Dancing Script, Lato), OKLCH-based color tokens, border radii, and box shadows, plus typography, container-queries, and animate plugins.",
+  "project_state.json": "Project state manifest (version 5) describing a premium romantic birthday single-page app with a multi-step interactive flow, listing existing implemented features, architectural notes, and known issues."
+}

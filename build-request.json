@@ -1,0 +1,42 @@
+{
+  "kind": "build_request",
+  "title": "Make floating hearts more visible across the full page",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-11",
+      "text": "Adjust the FloatingHearts component so that hearts are clearly noticeable across the entire page/viewport at all times when the pink theme is active. Increase the base opacity of hearts so they are visibly prominent against the pink background (without being overwhelming). Ensure hearts are distributed and cover the full width and height of the viewport, not clustered in one area. The count should remain in a reasonable range (30–45) — just enough to be clearly visible and spread throughout the screen.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "jo background ma jo hearts woh poore page pe thde dikhnne chahiye bht hi zyada bhi nhi prr noticable itne"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Floating hearts are visibly noticeable against the pink background — not faint or nearly invisible.",
+        "Hearts appear distributed across the full viewport width and height, not concentrated in one region.",
+        "The number of hearts is moderate (30–45) — noticeably present but not overwhelming or cluttered.",
+        "Heart opacity values are high enough to be clearly seen on the pink background.",
+        "No other theme elements, animations, or layout are changed."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not change any other part of the app — only adjust the FloatingHearts visibility and distribution.",
+    "Do not alter the blackout state behavior; hearts must still be hidden during the black screen state."
+  ],
+  "nonGoals": [
+    "Adding new heart shapes or styles.",
+    "Changing heart colors.",
+    "Modifying any other animation (flowers, balloons).",
+    "Changing any state machine logic or transitions.",
+    "Any backend changes."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}
