@@ -1,14 +1,41 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-25T11:44:03.470Z",
-  "summary": "The diff modifies FloatingHearts.tsx to address REQ-11. The implementation increases heart count to 40 (within the 30–45 range), raises opacity to 0.55–0.90 (high enough to be visible), distributes hearts across full viewport using percentage-based top positioning (0–110%), uses negative delays for immediate visibility, and preserves the `visible` prop for blackout state hiding. All changes are confined to FloatingHearts.tsx with no other components modified.",
-  "missing_requirements": [],
+  "generatedAt": "2026-02-25T12:03:12.133Z",
+  "summary": "The diff modifies the three animation components (FloatingHearts, FlowerRain, BalloonAnimation) to reference new image asset paths for heart, flower, and balloon graphics. The components now point to /assets/generated/heart-graphic.dim_120x120.png, /assets/generated/flower-graphic.dim_120x120.png, and /assets/generated/balloon-graphic.dim_80x140.png respectively. All animation logic, parameters, counts, z-index, placement, and distribution logic appear unchanged in the component code. However, the actual image asset files themselves are not present in the diff — no new image files were added.",
+  "missing_requirements": [
+    {
+      "id": "REQ-17",
+      "requirement": "Generate and use a high-quality heart image asset (heart-graphic.dim_120x120.png) that renders as a clearly recognizable, smooth, sharp heart shape with clean edges, proper proportions, and soft gradient shading on a transparent background.",
+      "reason": "The component code references /assets/generated/heart-graphic.dim_120x120.png, but no actual image file was added in the diff. The 'ADDED FILES: none' confirms no new asset files were created.",
+      "evidence": [
+        "frontend/src/components/FloatingHearts.tsx"
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "requirement": "Generate and use a high-quality flower image asset (flower-graphic.dim_120x120.png) that renders as a clearly recognizable flower with visible, properly shaped petals, a golden yellow center, and a transparent background.",
+      "reason": "The component code references /assets/generated/flower-graphic.dim_120x120.png, but no actual image file was added in the diff. The 'ADDED FILES: none' confirms no new asset files were created.",
+      "evidence": [
+        "frontend/src/components/FlowerRain.tsx"
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "requirement": "Generate and use a high-quality balloon image asset (balloon-graphic.dim_80x140.png) that renders as a clearly recognizable balloon with proper balloon shape, highlight sheen, and a visible string at the bottom, on a transparent background.",
+      "reason": "The component code references /assets/generated/balloon-graphic.dim_80x140.png, but no actual image file was added in the diff. The 'ADDED FILES: none' confirms no new asset files were created.",
+      "evidence": [
+        "frontend/src/components/BalloonAnimation.tsx"
+      ]
+    }
+  ],
   "hallucinated_features": [],
-  "confidence": 0.95,
+  "confidence": 0.9,
   "changed_files": [
     "frontend-file-summaries.txt",
+    "frontend/src/components/BalloonAnimation.tsx",
     "frontend/src/components/FloatingHearts.tsx",
+    "frontend/src/components/FlowerRain.tsx",
     "project_state.json"
   ]
 }

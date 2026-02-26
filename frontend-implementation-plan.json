@@ -1,23 +1,56 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Make floating hearts more visible across the full page",
+  "title": "Replace heart, flower, and balloon visual assets with high-quality recognizable graphics",
   "requirements": [
     {
-      "id": "REQ-11",
-      "summary": "Adjust FloatingHearts component to be clearly noticeable across the entire viewport when pink theme is active",
+      "id": "REQ-17",
+      "summary": "Replace the heart graphic in FloatingHearts with a high-quality, clearly recognizable heart image asset while preserving all animation properties",
       "acceptanceCriteria": [
-        "Floating hearts are visibly noticeable against the pink background — not faint or nearly invisible.",
-        "Hearts appear distributed across the full viewport width and height, not concentrated in one region.",
-        "The number of hearts is moderate (30–45) — noticeably present but not overwhelming or cluttered.",
-        "Heart opacity values are high enough to be clearly seen on the pink background.",
-        "No other theme elements, animations, or layout are changed."
+        "The heart graphic is clearly and immediately recognizable as a proper heart shape",
+        "The graphic is sharp, smooth, and visually premium with no distortion or abstract appearance",
+        "All FloatingHearts animation parameters (count, speed, opacity, size, placement, z-index, distribution) are identical to before",
+        "No theme colors, background, or any other UI element is changed"
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/FloatingHearts.tsx",
           "operation": "modify",
-          "description": "Increase the base opacity of hearts to ensure they are visibly prominent against the pink background. Adjust the heart count to a moderate range (30–45) if currently at 45, keep it; otherwise adjust to this range. Enhance the randomization logic for positioning to ensure hearts are distributed across the full viewport width and height, not clustered in one area. Update opacity values in the style generation to be higher (e.g., minimum 0.4–0.5 instead of lower values) so hearts are clearly noticeable. Ensure the generated image frontend/public/assets/generated/heart-float.dim_64x64.png is used as the heart image source. Do not change the visibility prop logic or blackout state behavior."
+          "description": "Update the image import or src reference to use the newly generated heart asset at frontend/public/assets/generated/heart-graphic.dim_120x120.png. Replace the current heart-float.dim_64x64.png reference with the new high-quality heart graphic. Ensure all animation logic, count, speed, opacity, size variation, placement, z-index, and distribution remain exactly unchanged."
+        }
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "summary": "Replace the flower graphic in FlowerRain with a high-quality, clearly recognizable flower image asset while preserving all animation properties",
+      "acceptanceCriteria": [
+        "The flower graphic clearly shows a flower with visible, properly shaped petals",
+        "The graphic is aesthetically pleasing, realistic, and premium-looking",
+        "All FlowerRain animation parameters (count, timing, speed, placement, z-index, intensity logic per stage) are identical to before",
+        "No theme colors, background, or any other UI element is changed"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/FlowerRain.tsx",
+          "operation": "modify",
+          "description": "Update the image import or src reference to use the newly generated flower asset at frontend/public/assets/generated/flower-graphic.dim_120x120.png. Replace the current flower-petal.dim_48x48.png reference with the new high-quality flower graphic. Ensure all animation logic, count, timing, speed, placement, z-index, and intensity logic remain exactly unchanged."
+        }
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "summary": "Replace the balloon graphic in BalloonAnimation with a high-quality, clearly recognizable balloon image asset while preserving all animation properties",
+      "acceptanceCriteria": [
+        "The balloon graphic clearly shows a proper balloon shape with a visible string at the bottom",
+        "The graphic is visually attractive and immediately identifiable as a balloon",
+        "All BalloonAnimation parameters (count, speed, upward movement, placement, z-index, intensity balance per stage) are identical to before",
+        "No theme colors, background, or any other UI element is changed"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/BalloonAnimation.tsx",
+          "operation": "modify",
+          "description": "Update the image import or src reference to use the newly generated balloon asset at frontend/public/assets/generated/balloon-graphic.dim_80x140.png. Replace the current balloon.dim_80x120.png reference with the new high-quality balloon graphic. Ensure all animation logic, count, speed, upward movement, placement, z-index, and intensity balance remain exactly unchanged."
         }
       ]
     }

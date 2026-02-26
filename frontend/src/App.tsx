@@ -128,30 +128,48 @@ const App: React.FC = () => {
   }, [isTransitioning]);
 
   const isBlackout = appState === 'blackout';
+
+  // Stage-aware visibility and counts
+  // Hearts: always visible except blackout/yes-transition; count varies by stage
   const showHearts = !isBlackout && appState !== 'yes-transition';
-  const showFlowers = appState === 'decorated' || appState === 'balloons';
-  const showBalloons = appState === 'balloons';
-  const showFinalHearts = appState === 'final';
+  // Normal stage: 40 hearts | decorate/decorated: 12 hearts | balloons/final: 5 hearts
+  const heartCount =
+    appState === 'balloons' || appState === 'final'
+      ? 5
+      : appState === 'decorated' || appState === 'decorate'
+      ? 12
+      : 40;
+
+  // Flowers: visible from decorated stage onward; count varies by stage
+  const showFlowers = appState === 'decorated' || appState === 'balloons' || appState === 'final';
+  // decorated: 40 flowers (dominant) | balloons/final: 5 flowers (minimal)
+  const flowerCount =
+    appState === 'balloons' || appState === 'final' ? 5 : 40;
+
+  // Balloons: visible from balloons stage onward
+  const showBalloons = appState === 'balloons' || appState === 'final';
+  // 32 balloons — dominant
+  const balloonCount = 32;
 
   return (
     <div
-      className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden transition-colors duration-1000"
+      className="relative min-h-screen w-full flex flex-col items-center justify-center transition-colors duration-1000"
       style={{
         background: isBlackout
           ? '#000000'
           : 'linear-gradient(135deg, oklch(0.95 0.03 5) 0%, oklch(0.92 0.05 355) 50%, oklch(0.94 0.04 10) 100%)',
       }}
     >
-      {/* Floating Hearts Background */}
-      <FloatingHearts visible={showHearts || showFinalHearts} />
+      {/* Floating Hearts — fixed full-viewport overlay, z-index 1 */}
+      <FloatingHearts visible={showHearts} count={heartCount} />
 
-      {/* Flower Rain */}
-      <FlowerRain visible={showFlowers} />
+      {/* Flower Rain — fixed full-viewport overlay, z-index 2 */}
+      <FlowerRain visible={showFlowers} count={flowerCount} />
 
-      {/* Balloon Animation */}
-      <BalloonAnimation visible={showBalloons} />
+      {/* Balloon Animation — fixed full-viewport overlay, z-index 3 */}
+      <BalloonAnimation visible={showBalloons} count={balloonCount} />
 
-      {/* Main Content */}
+      {/* Main Content — above all animations */}
       <main
         className="relative flex flex-col items-center justify-center min-h-screen w-full px-6 py-12"
         style={{ zIndex: 10 }}

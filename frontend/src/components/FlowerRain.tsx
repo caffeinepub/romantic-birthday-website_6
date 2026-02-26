@@ -24,24 +24,35 @@ function generateFlowers(count: number): FlowerProps[] {
 
 interface FlowerRainProps {
   visible: boolean;
+  count?: number;
 }
 
-const FlowerRain: React.FC<FlowerRainProps> = ({ visible }) => {
-  const flowers = useMemo(() => generateFlowers(40), []);
+const FlowerRain: React.FC<FlowerRainProps> = ({ visible, count = 40 }) => {
+  // Generate max pool of 40 flowers; slice to the requested count
+  const allFlowers = useMemo(() => generateFlowers(40), []);
+  const flowers = useMemo(() => allFlowers.slice(0, count), [allFlowers, count]);
 
   if (!visible) return null;
 
   return (
     <div
-      className="fixed inset-0 pointer-events-none overflow-hidden"
-      style={{ zIndex: 1 }}
+      className="pointer-events-none"
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100vw',
+        height: '100vh',
+        zIndex: 2,
+        overflow: 'hidden',
+      }}
       aria-hidden="true"
     >
       {flowers.map((flower) => (
         <div
           key={flower.id}
-          className="absolute"
           style={{
+            position: 'absolute',
             left: `${flower.left}%`,
             top: '-60px',
             width: `${flower.size}px`,
@@ -52,7 +63,7 @@ const FlowerRain: React.FC<FlowerRainProps> = ({ visible }) => {
           } as React.CSSProperties}
         >
           <img
-            src="/assets/generated/flower-petal.dim_48x48.png"
+            src="/assets/generated/flower-graphic.dim_120x120.png"
             alt=""
             style={{
               width: '100%',

@@ -2,8 +2,8 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-adjust-the-floatinghearts-component-so-that-hearts-are-clearly-noticeable-across-the-entire-page-viewport-at-all-times-when-the-pink-theme-is-active-increase-the-base-opacity-of-hearts-so-they-are-visibly-prominent-against-the-pink-background-without-being-overwhelming-ensure-hearts-are-distributed-and-cover-the-full-width-and-height-of-the-viewport-not-clustered-in-one-area-the-count-should-remain-in-a-reasonable-range-30-45-just-enough-to-be-clearly-visible-and-spread-throughout-the-screen",
-      "featureTitle": "Adjust the FloatingHearts component so that hearts are clearly noticeable across the entire page/viewport at all times when the pink theme is active. Increase the base opacity of hearts so they are visibly prominent against the pink background (without being overwhelming). Ensure hearts are distributed and cover the full width and height of the viewport, not clustered in one area. The count should remain in a reasonable range (30–45) — just enough to be clearly visible and spread throughout the screen.",
+      "featureId": "feature-generate-and-use-a-high-quality-heart-image-asset-that-renders-as-a-clearly-recognizable-smooth-sharp-heart-shape-the-graphic-must-have-clean-edges-proper-heart-proportions-and-be-visually-premium-not-distorted-abstract-or-unclear-use-this-asset-in-the-floatinghearts-component-to-replace-the-current-heart-graphic-all-animation-properties-movement-speed-opacity-size-variation-count-placement-z-index-layering-distribution-must-remain-exactly-unchanged",
+      "featureTitle": "Generate and use a high-quality heart image asset that renders as a clearly recognizable, smooth, sharp heart shape. The graphic must have clean edges, proper heart proportions, and be visually premium — not distorted, abstract, or unclear. Use this asset in the FloatingHearts component to replace the current heart graphic. All animation properties (movement, speed, opacity, size variation, count, placement, z-index, layering, distribution) must remain exactly unchanged.",
       "files": [
         "frontend/src/components/FloatingHearts.tsx"
       ],
@@ -15,7 +15,43 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-11"
+        "REQ-17"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-generate-and-use-a-high-quality-flower-image-asset-that-renders-as-a-clearly-recognizable-flower-with-visible-properly-shaped-petals-the-graphic-should-be-aesthetically-pleasing-realistic-looking-and-premium-use-this-asset-in-the-flowerrain-component-to-replace-the-current-flower-graphic-all-animation-properties-falling-behavior-timing-speed-count-intensity-logic-placement-z-index-must-remain-exactly-unchanged",
+      "featureTitle": "Generate and use a high-quality flower image asset that renders as a clearly recognizable flower with visible, properly shaped petals. The graphic should be aesthetically pleasing, realistic-looking, and premium. Use this asset in the FlowerRain component to replace the current flower graphic. All animation properties (falling behavior, timing, speed, count, intensity logic, placement, z-index) must remain exactly unchanged.",
+      "files": [
+        "frontend/src/components/FlowerRain.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-18"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-generate-and-use-a-high-quality-balloon-image-asset-that-renders-as-a-clearly-recognizable-balloon-with-proper-balloon-shape-and-a-visible-string-at-the-bottom-the-graphic-should-be-visually-attractive-and-easily-identifiable-as-a-balloon-use-this-asset-in-the-balloonanimation-component-to-replace-the-current-balloon-graphic-all-animation-properties-upward-flying-movement-speed-count-intensity-balance-placement-z-index-layering-must-remain-exactly-unchanged",
+      "featureTitle": "Generate and use a high-quality balloon image asset that renders as a clearly recognizable balloon with proper balloon shape and a visible string at the bottom. The graphic should be visually attractive and easily identifiable as a balloon. Use this asset in the BalloonAnimation component to replace the current balloon graphic. All animation properties (upward flying movement, speed, count, intensity balance, placement, z-index, layering) must remain exactly unchanged.",
+      "files": [
+        "frontend/src/components/BalloonAnimation.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-19"
       ],
       "confidence": "high"
     }

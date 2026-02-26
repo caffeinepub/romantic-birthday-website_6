@@ -3,7 +3,7 @@ import React, { useMemo } from 'react';
 interface HeartProps {
   id: number;
   left: number;
-  startY: number; // percentage from top (0–110) so hearts are spread across full page
+  startY: number;
   size: number;
   duration: number;
   delay: number;
@@ -16,11 +16,9 @@ function generateHearts(count: number): HeartProps[] {
   return Array.from({ length: count }, (_, i) => ({
     id: i,
     left: Math.random() * 100,
-    // Spread hearts across the full viewport height, including some above/below
     startY: Math.random() * 110,
     size: 20 + Math.random() * 32,
     duration: 7 + Math.random() * 9,
-    // Stagger delays so hearts are always visible at all positions
     delay: -(Math.random() * 16),
     opacity: 0.55 + Math.random() * 0.35,
     drift: (Math.random() - 0.5) * 100,
@@ -30,24 +28,35 @@ function generateHearts(count: number): HeartProps[] {
 
 interface FloatingHeartsProps {
   visible: boolean;
+  count?: number;
 }
 
-const FloatingHearts: React.FC<FloatingHeartsProps> = ({ visible }) => {
-  const hearts = useMemo(() => generateHearts(40), []);
+const FloatingHearts: React.FC<FloatingHeartsProps> = ({ visible, count = 40 }) => {
+  // Generate max pool of 40 hearts; slice to the requested count
+  const allHearts = useMemo(() => generateHearts(40), []);
+  const hearts = useMemo(() => allHearts.slice(0, count), [allHearts, count]);
 
   if (!visible) return null;
 
   return (
     <div
-      className="fixed inset-0 pointer-events-none overflow-hidden"
-      style={{ zIndex: 0 }}
+      className="pointer-events-none"
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100vw',
+        height: '100vh',
+        zIndex: 1,
+        overflow: 'hidden',
+      }}
       aria-hidden="true"
     >
       {hearts.map((heart) => (
         <div
           key={heart.id}
-          className="absolute"
           style={{
+            position: 'absolute',
             left: `${heart.left}%`,
             top: `${heart.startY}%`,
             width: `${heart.size}px`,
@@ -60,7 +69,7 @@ const FloatingHearts: React.FC<FloatingHeartsProps> = ({ visible }) => {
           } as React.CSSProperties}
         >
           <img
-            src="/assets/generated/heart-float.dim_64x64.png"
+            src="/assets/generated/heart-graphic.dim_120x120.png"
             alt=""
             style={{
               width: '100%',

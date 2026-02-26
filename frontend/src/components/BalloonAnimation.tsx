@@ -24,24 +24,35 @@ function generateBalloons(count: number): BalloonProps[] {
 
 interface BalloonAnimationProps {
   visible: boolean;
+  count?: number;
 }
 
-const BalloonAnimation: React.FC<BalloonAnimationProps> = ({ visible }) => {
-  const balloons = useMemo(() => generateBalloons(25), []);
+const BalloonAnimation: React.FC<BalloonAnimationProps> = ({ visible, count = 32 }) => {
+  // Generate max pool of 35 balloons; slice to the requested count
+  const allBalloons = useMemo(() => generateBalloons(35), []);
+  const balloons = useMemo(() => allBalloons.slice(0, count), [allBalloons, count]);
 
   if (!visible) return null;
 
   return (
     <div
-      className="fixed inset-0 pointer-events-none overflow-hidden"
-      style={{ zIndex: 1 }}
+      className="pointer-events-none"
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100vw',
+        height: '100vh',
+        zIndex: 3,
+        overflow: 'hidden',
+      }}
       aria-hidden="true"
     >
       {balloons.map((balloon) => (
         <div
           key={balloon.id}
-          className="absolute"
           style={{
+            position: 'absolute',
             left: `${balloon.left}%`,
             bottom: '-140px',
             width: `${balloon.size}px`,
@@ -52,7 +63,7 @@ const BalloonAnimation: React.FC<BalloonAnimationProps> = ({ visible }) => {
           } as React.CSSProperties}
         >
           <img
-            src="/assets/generated/balloon.dim_80x120.png"
+            src="/assets/generated/balloon-graphic.dim_80x140.png"
             alt=""
             style={{
               width: '100%',

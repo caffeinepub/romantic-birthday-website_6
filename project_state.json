@@ -1,13 +1,15 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 5,
+  "projectStateVersion": 9,
   "summary": "Premium romantic-themed interactive birthday website with pink background, floating hearts, multi-step interactive flow (opening animation → Yes/No choice → blackout → light reveal → decorate with flowers → balloon launch → final message), and smooth magical transitions throughout.",
   "architectural_notes": [
     "Single-page app with sequential state-based UI transitions (no routing needed)",
-    "All animations (hearts, flowers, balloons) implemented in CSS/JS without external libraries"
+    "All animations (hearts, flowers, balloons) implemented in CSS/JS without external libraries",
+    "Animation layers (hearts, flowers, balloons) must be rendered as fixed/absolute full-viewport overlays, never clipped inside layout containers"
   ],
   "known_issues": [],
   "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Smooth, sharp, high-quality deep rose-pink heart shape with clean edges, proper symmetrical proportions, soft gradient shading from rose to magenta, on a transparent background (heart-graphic.dim_120x120.png)\n- Realistic premium flower with fully visible soft pink and blush-white petals arranged in a natural bloom pattern, golden yellow center, on a transparent background (flower-graphic.dim_120x120.png)\n- Vibrant colorful balloon with a smooth oval balloon body in bright pink/red, subtle highlight sheen, and a thin curved string hanging from the bottom knot, on a transparent background (balloon-graphic.dim_80x140.png)",
   "existing_features": [
     {
       "id": "feature-apply-a-soft-light-pink-romantic-theme-globally-background-color-ffe4ee-or-equivalent-rose-pink-accent-palette-for-all-text-borders-and-ui-elements-typography-should-feel-elegant-and-premium-cursive-or-serif-for-headings-clean-sans-serif-for-body-all-transitions-between-states-must-use-smooth-fade-scale-animations-300-500ms-to-feel-magical",
@@ -96,6 +98,70 @@
         "REQ-11"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-ensure-the-floatinghearts-component-renders-as-a-fixed-full-viewport-overlay-position-fixed-top-0-left-0-width-100vw-height-100vh-z-index-high-enough-to-be-above-the-page-background-but-below-interactive-ui-elements-hearts-must-not-be-mounted-inside-any-layout-container-card-or-section-element-they-must-not-be-clipped-by-any-parent-s-overflow-hidden-or-bounded-dimensions-keep-the-same-high-intensity-count-30-45-hearts-and-all-existing-opacity-size-speed-and-distribution-settings-unchanged",
+      "title": "Ensure the FloatingHearts component renders as a fixed full-viewport overlay (position: fixed, top: 0, left: 0, width: 100vw, height: 100vh, z-index high enough to be above the page background but below interactive UI elements). Hearts must not be mounted inside any layout container, card, or section element. They must not be clipped by any parent's overflow:hidden or bounded dimensions. Keep the same high-intensity count (30–45 hearts) and all existing opacity, size, speed, and distribution settings unchanged.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-flowerrain-component-renders-as-a-fixed-full-viewport-overlay-position-fixed-top-0-left-0-width-100vw-height-100vh-when-the-decorate-button-has-been-clicked-flowers-must-fall-freely-across-the-entire-screen-and-must-not-be-clipped-or-restricted-inside-any-layout-element-box-or-container-flowers-must-be-clearly-visible-and-dominant-on-screen",
+      "title": "Ensure the FlowerRain component renders as a fixed full-viewport overlay (position: fixed, top: 0, left: 0, width: 100vw, height: 100vh) when the Decorate button has been clicked. Flowers must fall freely across the entire screen and must not be clipped or restricted inside any layout element, box, or container. Flowers must be clearly visible and dominant on screen.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-during-the-decorate-stage-after-decorate-button-is-clicked-before-fly-balloons-is-clicked-reduce-the-number-of-active-floatinghearts-to-approximately-10-15-from-the-normal-30-45-so-that-flowers-are-more-dominant-and-visually-prominent-than-hearts-no-other-changes-to-heart-appearance-or-animation-style",
+      "title": "During the 'Decorate' stage (after Decorate button is clicked, before Fly Balloons is clicked), reduce the number of active FloatingHearts to approximately 10–15 (from the normal 30–45) so that flowers are more dominant and visually prominent than hearts. No other changes to heart appearance or animation style.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-balloonanimation-component-renders-as-a-fixed-full-viewport-overlay-position-fixed-bottom-0-left-0-width-100vw-height-100vh-when-the-fly-balloons-button-has-been-clicked-balloons-must-rise-freely-across-the-entire-screen-and-must-not-be-clipped-or-restricted-inside-any-layout-element-box-or-container",
+      "title": "Ensure the BalloonAnimation component renders as a fixed full-viewport overlay (position: fixed, bottom: 0, left: 0, width: 100vw, height: 100vh) when the Fly Balloons button has been clicked. Balloons must rise freely across the entire screen and must not be clipped or restricted inside any layout element, box, or container.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-during-the-fly-balloons-stage-after-fly-balloons-button-is-clicked-before-my-message-for-you-is-clicked-reduce-floatinghearts-count-to-approximately-5-or-fewer-very-minimal-reduce-flowerrain-count-to-approximately-5-or-fewer-very-minimal-and-increase-balloon-count-to-approximately-30-35-slightly-more-than-the-current-25-so-balloons-are-clearly-dominant-all-animations-must-remain-smooth-and-properly-layered-no-other-visual-or-theme-changes",
+      "title": "During the 'Fly Balloons' stage (after Fly Balloons button is clicked, before My Message for You is clicked): reduce FloatingHearts count to approximately 5 or fewer (very minimal), reduce FlowerRain count to approximately 5 or fewer (very minimal), and increase balloon count to approximately 30–35 (slightly more than the current 25) so balloons are clearly dominant. All animations must remain smooth and properly layered. No other visual or theme changes.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-and-use-a-high-quality-heart-image-asset-that-renders-as-a-clearly-recognizable-smooth-sharp-heart-shape-the-graphic-must-have-clean-edges-proper-heart-proportions-and-be-visually-premium-not-distorted-abstract-or-unclear-use-this-asset-in-the-floatinghearts-component-to-replace-the-current-heart-graphic-all-animation-properties-movement-speed-opacity-size-variation-count-placement-z-index-layering-distribution-must-remain-exactly-unchanged",
+      "title": "Generate and use a high-quality heart image asset that renders as a clearly recognizable, smooth, sharp heart shape. The graphic must have clean edges, proper heart proportions, and be visually premium — not distorted, abstract, or unclear. Use this asset in the FloatingHearts component to replace the current heart graphic. All animation properties (movement, speed, opacity, size variation, count, placement, z-index, layering, distribution) must remain exactly unchanged.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-and-use-a-high-quality-flower-image-asset-that-renders-as-a-clearly-recognizable-flower-with-visible-properly-shaped-petals-the-graphic-should-be-aesthetically-pleasing-realistic-looking-and-premium-use-this-asset-in-the-flowerrain-component-to-replace-the-current-flower-graphic-all-animation-properties-falling-behavior-timing-speed-count-intensity-logic-placement-z-index-must-remain-exactly-unchanged",
+      "title": "Generate and use a high-quality flower image asset that renders as a clearly recognizable flower with visible, properly shaped petals. The graphic should be aesthetically pleasing, realistic-looking, and premium. Use this asset in the FlowerRain component to replace the current flower graphic. All animation properties (falling behavior, timing, speed, count, intensity logic, placement, z-index) must remain exactly unchanged.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-and-use-a-high-quality-balloon-image-asset-that-renders-as-a-clearly-recognizable-balloon-with-proper-balloon-shape-and-a-visible-string-at-the-bottom-the-graphic-should-be-visually-attractive-and-easily-identifiable-as-a-balloon-use-this-asset-in-the-balloonanimation-component-to-replace-the-current-balloon-graphic-all-animation-properties-upward-flying-movement-speed-count-intensity-balance-placement-z-index-layering-must-remain-exactly-unchanged",
+      "title": "Generate and use a high-quality balloon image asset that renders as a clearly recognizable balloon with proper balloon shape and a visible string at the bottom. The graphic should be visually attractive and easily identifiable as a balloon. Use this asset in the BalloonAnimation component to replace the current balloon graphic. All animation properties (upward flying movement, speed, count, intensity balance, placement, z-index, layering) must remain exactly unchanged.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -150,6 +216,18 @@
     {
       "id": "AR-9",
       "summary": "Make background floating hearts more visible/noticeable across the full page — not too many, but clearly visible throughout",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "All animations (hearts, flowers, balloons) must float freely across the full screen — not clipped inside any box/container/card. Animation intensity should be stage-aware: during flower stage hearts decrease; during balloon stage both hearts and flowers become minimal while balloons dominate.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Replace floating heart, flower, and balloon visual assets with high-quality, clearly recognizable graphics (proper heart shapes, realistic flowers with visible petals, balloons with strings) — no changes to animation, timing, layout, theme, or code logic",
       "reqIds": [],
       "status": "pending"
     }
